@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProSite | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">ProSite</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <button id="darkBtn">🌙</button>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Professional Modern Websites</h1>
+  <p>High-performance, responsive, and visually stunning web experiences for your brand.</p>
+  <button class="btn" onclick="showAlert()">Get Started</button>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>Beautiful and responsive UI/UX design solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Clean, scalable, and optimized web applications.</p>
+    </div>
+    <div class="card">
+      <h3>SEO & Marketing</h3>
+      <p>Improve your visibility and reach more customers online.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 ProSite. All rights reserved.
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
