@@ -389,4 +389,8 @@ body {
     .container {
         padding: 0 1rem;
     }
+    
+    .hero-card {
+        margin: 0 auto;
+    }
 }
