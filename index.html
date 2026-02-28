@@ -3,159 +3,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Site - Gallery</title>
+    <title>Quiz Site - Home</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-        /* Additional gallery styles */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .stat-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .stat-item h4 {
-            font-size: 2rem;
-            font-weight: 700;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
-        }
-        
-        .color-legend {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .color-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .dot-red { background: #ff6b6b; }
-        .dot-blue { background: #4dabf7; }
-        .dot-green { background: #51cf66; }
-    </style>
 </head>
 <body>
     <header class="header">
         <div class="logo">My Portfolio</div>
         <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="gallery.html" class="active">Gallery</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="gallery.html">Gallery</a>
         </nav>
     </header>
     
     <main class="container">
-        <section class="gallery-section">
-            <h1 class="gallery-title">Data Visualization Gallery</h1>
-            <p class="gallery-subtitle">Two plots from Python Colab analysis showing student performance patterns</p>
-            
-            <!-- Quick Stats -->
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h4>3.53</h4>
-                    <p>Trendline Slope</p>
-                </div>
-                <div class="stat-item">
-                    <h4>12</h4>
-                    <p>Students Analyzed</p>
-                </div>
-                <div class="stat-item">
-                    <h4>90</h4>
-                    <p>Highest Score</p>
-                </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Data and Design</h1>
+                <p>Clean layout, responsive grid, no frameworks. Python data visualization with Colab.</p>
+                <a class="btn" href="gallery.html">View Gallery</a>
             </div>
-            
-            <!-- Plot 1: Study Hours -->
-            <div id="study" class="plot-container">
-                <h2>📈 Plot 1: Study Hours vs Exam Score</h2>
-                <img src="images/study_vs_score.png" alt="Scatter plot showing study hours vs exam scores with trendline" class="plot-image">
-                <div class="caption-box">
-                    <p><strong>🔍 What this shows:</strong> Strong positive correlation between study hours and exam scores. The trendline slope is <strong style="color: #4361ee;">3.53</strong>, meaning each additional study hour adds about 3.5 points to the exam score.</p>
-                    <p><strong>📊 Correlation:</strong> As study hours increase from 2 to 10, scores rise from 55 to 90.</p>
-                </div>
+            <div class="hero-card">
+                <p>KPI</p>
+                <h2>72%</h2>
             </div>
-            
-            <!-- Plot 2: Sleep Hours -->
-            <div id="sleep" class="plot-container">
-                <h2>😴 Plot 2: Sleep Hours vs Exam Score</h2>
-                <img src="images/sleep_vs_score.png" alt="Scatter plot showing sleep hours vs exam scores colored by study hours" class="plot-image">
-                
-                <!-- Color Legend -->
-                <div class="color-legend">
-                    <div class="legend-item">
-                        <span class="color-dot dot-red"></span>
-                        <span>Low Study (0-4 hrs)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="color-dot dot-blue"></span>
-                        <span>Medium Study (5-7 hrs)</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="color-dot dot-green"></span>
-                        <span>High Study (8+ hrs)</span>
-                    </div>
-                </div>
-                
-                <div class="caption-box">
-                    <p><strong>🔍 What this shows:</strong> Sleep hours alone doesn't predict scores well. Points are colored by study hours:</p>
-                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                        <li><span style="color: #ff6b6b;">Red (Low study)</span> - Scores consistently below 70</li>
-                        <li><span style="color: #4dabf7;">Blue (Medium study)</span> - Scores 68-78</li>
-                        <li><span style="color: #51cf66;">Green (High study)</span> - Scores 83-90</li>
-                    </ul>
-                    <p><strong>Key insight:</strong> Students with the same sleep (e.g., 6 hours) score very differently based on study time.</p>
-                </div>
+        </section>
+        
+        <!-- Cards Grid Section -->
+        <section class="grid">
+            <div class="card">
+                <h3>📊 Data Analysis</h3>
+                <p>Study hours vs exam scores correlation. Slope: 3.53</p>
+                <a href="gallery.html#study" class="card-link">View Plot →</a>
             </div>
-            
-            <!-- Combined Analysis -->
-            <div class="highlight">
-                <h3>🎯 Key Findings & Recommendations</h3>
+            <div class="card">
+                <h3>🎨 Visual Design</h3>
+                <p>Sleep hours analysis with color coding by study time</p>
+                <a href="gallery.html#sleep" class="card-link">View Plot →</a>
+            </div>
+            <div class="card">
+                <h3>💻 Web Development</h3>
+                <p>Responsive design with CSS grid and flexbox</p>
+                <a href="gallery.html" class="card-link">See Gallery →</a>
+            </div>
+            <div class="card">
+                <h3>🤖 AI Integration</h3>
+                <p>Python data visualization in Google Colab</p>
+                <a href="https://colab.research.google.com" target="_blank" class="card-link">Open Colab →</a>
+            </div>
+        </section>
+        
+        <!-- Contact Section (Added here) -->
+        <section class="contact-section">
+            <h2 class="section-title">📬 Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about the data or want to collaborate? Reach out!</p>
+                    <div class="contact-details">
+                        <p><strong>📧 Email:</strong> student@quiz.com</p>
+                        <p><strong>📱 Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>📍 Location:</strong> Data Science Dept</p>
+                    </div>
+                </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
-                    <div style="background: white; padding: 1.5rem; border-radius: var(--border-radius);">
-                        <h4 style="color: #4361ee; margin-bottom: 1rem;">More Predictive Variable</h4>
-                        <p style="font-size: 1.1rem;"><strong>Study Hours</strong> is clearly more predictive. The study hours plot shows a consistent upward trend (slope 3.53), while sleep hours shows scattered points with no clear pattern.</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name">
                     </div>
                     
-                    <div style="background: white; padding: 1.5rem; border-radius: var(--border-radius);">
-                        <h4 style="color: #f72585; margin-bottom: 1rem;">Outlier Identified</h4>
-                        <p style="font-size: 1.1rem;"><strong>Student F</strong> (studied 10h, slept 6h, scored 90) stands out - scored much higher than others with similar sleep (6h sleep group scores: 68-90).</p>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Your email">
                     </div>
-                </div>
-                
-                <div style="background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%); padding: 2rem; border-radius: var(--border-radius); color: white; margin-top: 1rem;">
-                    <h4 style="color: white; margin-bottom: 1rem;">✅ Data-Driven Decision</h4>
-                    <p style="font-size: 1.1rem;">Implement study support programs for students studying less than 5 hours, as they consistently score below 70. Create peer tutoring for medium-study students (5-7 hrs) to help them reach the 80+ score range achieved by high-study students.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="index.html" class="back-link">← Back to Home</a>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Your message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
     
-    <footer class="footer">© 2026 My Portfolio. All rights reserved. | Made with Colab + CSS</footer>
+    <footer class="footer">
+        <p>© 2026 My Portfolio. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made with Python + Colab + CSS</p>
+    </footer>
 </body>
 </html>
