@@ -5,114 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Site - Gallery</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-        .gallery-section {
-            padding: 3rem 0;
-        }
-        
-        .gallery-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-        }
-        
-        .gallery-subtitle {
-            text-align: center;
-            color: #6c757d;
-            margin-bottom: 3rem;
-        }
-        
-        .plot-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        
-        .plot-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #4361ee;
-        }
-        
-        .plot-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin: 1.5rem 0;
-            display: block;
-        }
-        
-        .image-container {
-            text-align: center;
-            background: #f8faff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .caption {
-            padding: 1.5rem;
-            background: #f0f4ff;
-            border-radius: 8px;
-            border-left: 4px solid #4361ee;
-            margin: 1rem 0;
-        }
-        
-        .legend {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .dot-red { background: #ff6b6b; }
-        .dot-blue { background: #4dabf7; }
-        .dot-green { background: #51cf66; }
-        
-        .findings {
-            background: #f8faff;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin: 2rem 0;
-            color: white;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .back-link:hover {
-            transform: translateX(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-        }
-    </style>
 </head>
 <body>
     <header class="header">
@@ -124,46 +16,47 @@
     </header>
     
     <main class="container">
-        <section class="gallery-section">
-            <h1 class="gallery-title">Data Visualization Gallery</h1>
-            <p class="gallery-subtitle">Two plots from Python Colab analysis showing student performance</p>
+        <!-- Gallery Section -->
+        <section class="gallery-section" style="padding: 3rem 0;">
+            <h1 style="text-align: center; font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Data Visualization Gallery</h1>
+            <p style="text-align: center; color: #6c757d; margin-bottom: 3rem;">Two plots from Python Colab analysis showing student performance</p>
             
             <!-- FIRST PLOT - Study Hours -->
-            <div id="study" class="plot-card">
-                <h2>📈 Plot 1: Study Hours vs Exam Score</h2>
-                <div class="image-container">
-                    <img src="images/study_vs_score.png" alt="Study hours vs exam score plot" class="plot-image">
+            <div id="study" style="background: white; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #4361ee;">📈 Plot 1: Study Hours vs Exam Score</h2>
+                <div style="text-align: center; background: #f8faff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <img src="images/study_vs_score.png" alt="Study hours vs exam score plot" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                 </div>
-                <div class="caption">
+                <div style="padding: 1.5rem; background: #f0f4ff; border-radius: 8px; border-left: 4px solid #4361ee; margin: 1rem 0;">
                     <p><strong>What this shows:</strong> Strong positive correlation between study hours and exam scores. The trendline slope is <strong style="color: #4361ee;">3.53</strong>, meaning each additional study hour adds about 3.5 points.</p>
-                    <p><strong>Range:</strong> 2 hours → 55 score, 10 hours → 90 score</p>
+                    <p style="margin-top: 0.5rem;"><strong>Range:</strong> 2 hours → 55 score, 10 hours → 90 score</p>
                 </div>
             </div>
             
             <!-- SECOND PLOT - Sleep Hours -->
-            <div id="sleep" class="plot-card">
-                <h2>😴 Plot 2: Sleep Hours vs Exam Score</h2>
-                <div class="image-container">
-                    <img src="images/sleep_vs_score.png" alt="Sleep hours vs exam score plot colored by study hours" class="plot-image">
+            <div id="sleep" style="background: white; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; box-shadow: 0 10px 15px rgba(0,0,0,0.1);">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #4361ee;">😴 Plot 2: Sleep Hours vs Exam Score</h2>
+                <div style="text-align: center; background: #f8faff; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <img src="images/sleep_vs_score.png" alt="Sleep hours vs exam score plot colored by study hours" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
                 </div>
                 
                 <!-- Color Legend -->
-                <div class="legend">
-                    <div class="legend-item">
-                        <span class="dot dot-red"></span>
+                <div style="display: flex; gap: 2rem; justify-content: center; margin: 1rem 0; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff6b6b;"></span>
                         <span>Low Study (0-4 hrs)</span>
                     </div>
-                    <div class="legend-item">
-                        <span class="dot dot-blue"></span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #4dabf7;"></span>
                         <span>Medium Study (5-7 hrs)</span>
                     </div>
-                    <div class="legend-item">
-                        <span class="dot dot-green"></span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #51cf66;"></span>
                         <span>High Study (8+ hrs)</span>
                     </div>
                 </div>
                 
-                <div class="caption">
+                <div style="padding: 1.5rem; background: #f0f4ff; border-radius: 8px; border-left: 4px solid #4361ee; margin: 1rem 0;">
                     <p><strong>What this shows:</strong> Sleep hours alone doesn't predict scores well. Color shows study time:</p>
                     <ul style="margin: 1rem 0; padding-left: 1.5rem;">
                         <li><span style="color: #ff6b6b;">Red (Low study)</span> → Scores below 70</li>
@@ -174,18 +67,19 @@
             </div>
             
             <!-- Key Findings -->
-            <div class="findings">
+            <div style="background: #f8faff; padding: 2rem; border-radius: 12px; margin: 2rem 0;">
                 <h2 style="color: #4361ee; margin-bottom: 1.5rem;">🔍 Key Findings</h2>
                 
-                <p><strong>📊 More predictive variable:</strong> Study hours (slope 3.53) vs Sleep hours (no clear pattern)</p>
+                <p style="margin: 1rem 0;"><strong>📊 More predictive variable:</strong> Study hours (slope 3.53) vs Sleep hours (no clear pattern)</p>
                 
-                <p><strong>⭐ Outlier identified:</strong> Student F - studied 10h, slept 6h, scored 90 (highest score)</p>
+                <p style="margin: 1rem 0;"><strong>⭐ Outlier identified:</strong> Student F - studied 10h, slept 6h, scored 90 (highest score)</p>
                 
-                <p><strong>✅ Data-driven decision:</strong> Create study programs for students with &lt;5 study hours to improve scores</p>
+                <p style="margin: 1rem 0;"><strong>✅ Data-driven decision:</strong> Create study programs for students with less than 5 study hours to improve scores</p>
             </div>
             
+            <!-- Back to Home Button -->
             <div style="text-align: center;">
-                <a href="index.html" class="back-link">← Back to Home</a>
+                <a href="index.html" style="display: inline-block; margin: 2rem 0; color: white; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-decoration: none; font-weight: 600; padding: 1rem 2rem; border-radius: 30px; transition: all 0.3s ease;">← Back to Home</a>
             </div>
         </section>
     </main>
