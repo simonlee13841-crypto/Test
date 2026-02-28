@@ -1,0 +1,102 @@
+x<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Site - Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Gallery page specific styles */
+        .gallery-container {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .plot-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 2rem 0;
+        }
+        
+        .plot-caption {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: left;
+            border-left: 4px solid #3498db;
+        }
+        
+        .plot-caption p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .plot-caption strong {
+            color: #3498db;
+            font-size: 1.2rem;
+        }
+        
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .back-home:hover {
+            background: #2980b9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">My Portfolio</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section class="gallery-container">
+            <h1 class="section-title">Data Visualization Gallery</h1>
+            <p class="section-subtitle">Study Hours vs Exam Score Analysis</p>
+            
+            <!-- Plot image from Colab -->
+            <img src="images/study_vs_score.png" alt="Scatter plot showing correlation between study hours and exam scores with trendline" class="plot-image">
+            
+            <!-- Caption section -->
+            <div class="plot-caption">
+                <p><strong>📊 What this chart shows:</strong> This scatter plot demonstrates a strong positive correlation between study hours and exam scores, with the trendline showing that exam scores increase by approximately 3.53 points for each additional hour of study.</p>
+                <p><strong>📝 Decision based on this chart:</strong> Based on this data, I would recommend implementing a study skills program for students studying less than 5 hours, as the data shows scores below 70 for this group, while students studying 8+ hours consistently score above 85.</p>
+            </div>
+            
+            <a href="index.html" class="back-home">← Back to Home</a>
+        </section>
+    </main>
+    
+    <footer class="footer">© 2026 My Portfolio. All rights reserved.</footer>
+</body>
+</html>
