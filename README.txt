@@ -1,4 +1,4 @@
-Name: [YOUR NAME HERE]
+Name: Sai Mon Pyae
 Tools used: ChatGPT, Colab, Browser
 
 Q1:
