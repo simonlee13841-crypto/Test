@@ -1,4 +1,4 @@
-x<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -6,66 +6,217 @@ x<!doctype html>
     <title>Quiz Site - Gallery</title>
     <link rel="stylesheet" href="style.css" />
     <style>
-        /* Gallery page specific styles */
-        .gallery-container {
+        /* Additional gallery styles */
+        .gallery-section {
             padding: 3rem 0;
+        }
+        
+        .gallery-title {
             text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .plot-container {
+            margin: 4rem 0;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .plot-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .plot-container h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
         
         .plot-image {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin: 1.5rem 0;
+            border: 3px solid white;
+            transition: transform 0.3s ease;
+        }
+        
+        .plot-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .caption-box {
+            padding: 1.8rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            border-left: 5px solid #4361ee;
+            margin: 1.5rem 0;
+        }
+        
+        .caption-box p {
+            margin: 0.8rem 0;
+            color: #2d3436;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        
+        .highlight h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #4361ee;
+        }
+        
+        .highlight p {
+            margin: 1rem 0;
+            color: #2d3436;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #4361ee;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        #study, #sleep {
+            scroll-margin-top: 5rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
             margin: 2rem 0;
         }
         
-        .plot-caption {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-            text-align: left;
-            border-left: 4px solid #3498db;
+        .stat-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
         }
         
-        .plot-caption p {
+        .stat-item h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
             margin: 1rem 0;
-            font-size: 1.1rem;
-            color: #333;
-            line-height: 1.6;
+            flex-wrap: wrap;
         }
         
-        .plot-caption strong {
-            color: #3498db;
-            font-size: 1.2rem;
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        .back-home {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.8rem 2rem;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+        .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
         
-        .back-home:hover {
-            background: #2980b9;
+        .dot-red { background: #ff6b6b; }
+        .dot-blue { background: #4dabf7; }
+        .dot-green { background: #51cf66; }
+        
+        .finding-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        .section-title {
-            text-align: center;
+        .finding-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        
+        .finding-card h4 {
+            color: #4361ee;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
+        .decision-box {
+            background: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            color: white;
+            margin-top: 1rem;
+        }
+        
+        .decision-box h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 600px) {
+            .finding-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .plot-container {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -75,28 +226,100 @@ x<!doctype html>
         <nav class="nav">
             <a href="index.html">Home</a>
             <a href="gallery.html" class="active">Gallery</a>
-            <a href="contact.html">Contact</a>
         </nav>
     </header>
     
     <main class="container">
-        <section class="gallery-container">
-            <h1 class="section-title">Data Visualization Gallery</h1>
-            <p class="section-subtitle">Study Hours vs Exam Score Analysis</p>
+        <section class="gallery-section">
+            <h1 class="gallery-title">Data Visualization Gallery</h1>
+            <p class="gallery-subtitle">Two plots from Python Colab analysis showing student performance patterns</p>
             
-            <!-- Plot image from Colab -->
-            <img src="images/study_vs_score.png" alt="Scatter plot showing correlation between study hours and exam scores with trendline" class="plot-image">
-            
-            <!-- Caption section -->
-            <div class="plot-caption">
-                <p><strong>📊 What this chart shows:</strong> This scatter plot demonstrates a strong positive correlation between study hours and exam scores, with the trendline showing that exam scores increase by approximately 3.53 points for each additional hour of study.</p>
-                <p><strong>📝 Decision based on this chart:</strong> Based on this data, I would recommend implementing a study skills program for students studying less than 5 hours, as the data shows scores below 70 for this group, while students studying 8+ hours consistently score above 85.</p>
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h4>3.53</h4>
+                    <p>Trendline Slope</p>
+                </div>
+                <div class="stat-item">
+                    <h4>12</h4>
+                    <p>Students Analyzed</p>
+                </div>
+                <div class="stat-item">
+                    <h4>90</h4>
+                    <p>Highest Score</p>
+                </div>
             </div>
             
-            <a href="index.html" class="back-home">← Back to Home</a>
+            <!-- Plot 1: Study Hours -->
+            <div id="study" class="plot-container">
+                <h2>📈 Plot 1: Study Hours vs Exam Score</h2>
+                <img src="images/study_vs_score.png" alt="Scatter plot showing study hours vs exam scores with trendline" class="plot-image">
+                <div class="caption-box">
+                    <p><strong>🔍 What this shows:</strong> Strong positive correlation between study hours and exam scores. The trendline slope is <strong style="color: #4361ee;">3.53</strong>, meaning each additional study hour adds about 3.5 points to the exam score.</p>
+                    <p><strong>📊 Correlation:</strong> As study hours increase from 2 to 10, scores rise from 55 to 90.</p>
+                </div>
+            </div>
+            
+            <!-- Plot 2: Sleep Hours -->
+            <div id="sleep" class="plot-container">
+                <h2>😴 Plot 2: Sleep Hours vs Exam Score</h2>
+                <img src="images/sleep_vs_score.png" alt="Scatter plot showing sleep hours vs exam scores colored by study hours" class="plot-image">
+                
+                <!-- Color Legend -->
+                <div class="color-legend">
+                    <div class="legend-item">
+                        <span class="color-dot dot-red"></span>
+                        <span>Low Study (0-4 hrs)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-dot dot-blue"></span>
+                        <span>Medium Study (5-7 hrs)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="color-dot dot-green"></span>
+                        <span>High Study (8+ hrs)</span>
+                    </div>
+                </div>
+                
+                <div class="caption-box">
+                    <p><strong>🔍 What this shows:</strong> Sleep hours alone doesn't predict scores well. Points are colored by study hours:</p>
+                    <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                        <li><span style="color: #ff6b6b;">Red (Low study)</span> - Scores consistently below 70</li>
+                        <li><span style="color: #4dabf7;">Blue (Medium study)</span> - Scores 68-78</li>
+                        <li><span style="color: #51cf66;">Green (High study)</span> - Scores 83-90</li>
+                    </ul>
+                    <p><strong>Key insight:</strong> Students with the same sleep (e.g., 6 hours) score very differently based on study time.</p>
+                </div>
+            </div>
+            
+            <!-- Combined Analysis -->
+            <div class="highlight">
+                <h3>🎯 Key Findings & Recommendations</h3>
+                
+                <div class="finding-grid">
+                    <div class="finding-card">
+                        <h4>More Predictive Variable</h4>
+                        <p><strong>Study Hours</strong> is clearly more predictive. The study hours plot shows a consistent upward trend (slope 3.53), while sleep hours shows scattered points with no clear pattern.</p>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h4>Outlier Identified</h4>
+                        <p><strong>Student F</strong> (studied 10h, slept 6h, scored 90) stands out - scored much higher than others with similar sleep (6h sleep group scores: 68-90).</p>
+                    </div>
+                </div>
+                
+                <div class="decision-box">
+                    <h4>✅ Data-Driven Decision</h4>
+                    <p>Implement study support programs for students studying less than 5 hours, as they consistently score below 70. Create peer tutoring for medium-study students (5-7 hrs) to help them reach the 80+ score range achieved by high-study students.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
         </section>
     </main>
     
-    <footer class="footer">© 2026 My Portfolio. All rights reserved.</footer>
+    <footer class="footer">© 2026 My Portfolio. All rights reserved. | Made with Colab + CSS</footer>
 </body>
 </html>
